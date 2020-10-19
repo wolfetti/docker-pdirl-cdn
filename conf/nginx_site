@@ -10,6 +10,10 @@ server {
   error_log /dev/stdout info;
   access_log /dev/stdout;
   
+  location = /favicon.ico {
+    alias /usr/share/pdirl/favicon.ico;
+  }
+  
   location ~ \.php$ {
     include snippets/fastcgi-php.conf;
     fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
